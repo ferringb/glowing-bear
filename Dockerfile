@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . ./
 RUN npm install && npm run build
 
-FROM docker.io/joseluisq/static-web-server:2.14.1
+FROM docker.io/joseluisq/static-web-server:2.39.0
 COPY --from=builder /app/build /content/
 USER 3000
 ENV SERVER_LOG_LEVEL=info
